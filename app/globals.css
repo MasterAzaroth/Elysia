@@ -10,6 +10,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-brand-grey1: #181818;
+  --color-brand-grey2: #212121;
+  --color-brand-grey3: #303030;
+  --color-brand-grey4: #B3B3B3;
+  --color-brand-purple1: #7D5BF8;
+  --color-brand-purple2: #5B3FCF;
+  --color-brand-purple3: #3E2A99;
 }
 
 @media (prefers-color-scheme: dark) {
