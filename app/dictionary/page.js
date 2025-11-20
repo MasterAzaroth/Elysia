@@ -1,16 +1,25 @@
-import Search from '@/components/search.js';
-import InfoCard from '@/components/infoCard.js';
-import InfoCardExpanded from '@/components/infoCardExpanded.js';
+import { Landmark } from "lucide-react";
+import DCM from "../../components/dCM.js";
+import Search from "../../components/search.js";
 
 export default function Dictionary() {
     return (
-        <main >
-            <Search></Search>
-            {/* <InfoCard title="Aesthetics" category="Bodybuilding Culture" type="Training Philosophy" quote="Training philosophy focused on proportion and visual appeal."></InfoCard> */}
+        <main className="w-full h-full">
             
-            
+            <div className="mb-8">
+                <Search></Search>
+            </div>
 
-            <InfoCardExpanded></InfoCardExpanded>
+            <div className="mb-8">
+                <DCM
+                    title = "Aesthetics"
+                    category = "Biomechanics & Anatomy"
+                    sub = "Neuromuscular & Energy Systems"
+                    gist = "Simple example phrase for testing."
+                    icon = {<Landmark></Landmark>}
+                />
+            </div>
+        
         </main>
     )
 }
