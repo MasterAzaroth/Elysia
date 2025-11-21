@@ -14,12 +14,12 @@ export default function DCM({ title, category, sub, gist, icon, definition }) {
     <div
       className={`
         w-full bg-brand-grey2 rounded-3xl overflow-hidden
-        transition-all duration-700 ease-in-out
-        ${isOpen ? "h-40" : "h-20"}
+        transition-all duration-1000 ease-in-out
+        ${isOpen ? "max-h-40" : "max-h-20"}
       `}
     >
       {isOpen ? (
-        /* ========== EXPANDED ========== */
+        // ========== EXPANDED ==========
         <div className="relative flex h-full w-full flex-col p-4">
           {/* TOP ROW: icon + title + divider  |  category + type */}
           <div className="flex items-start gap-4">
@@ -48,7 +48,7 @@ export default function DCM({ title, category, sub, gist, icon, definition }) {
             <Play
               className={`
                 w-4 h-4 ml-2 text-brand-grey3 fill-current
-                transform transition-transform duration-700 ease-in-out
+                transform transition-transform duration-1000 ease-in-out
                 ${isOpen ? "-rotate-90" : "rotate-90"}
               `}
             />
@@ -70,16 +70,20 @@ export default function DCM({ title, category, sub, gist, icon, definition }) {
           </div>
         </div>
       ) : (
-        /* ========== COLLAPSED ========== */
-        <div className="flex h-full w-full p-4">
-          {/* LEFT: icon + title + vertical divider */}
+        // ========== COLLAPSED ==========
+    <div
+      className={`
+        w-full bg-brand-grey2 flex p-4 rounded-3xl
+        overflow-hidden transition-opacity duration-1000
+        ${isOpen ? "h-40" : "h-20"}
+      `}
+    >
           <div className="flex-shrink-0 h-full flex items-center">
             <div className="mr-4">{icon}</div>
             <p className="mr-4 text-xs text-white">{title}</p>
             <div className="w-[2px] h-full mr-4 bg-brand-grey3" />
           </div>
 
-          {/* MIDDLE: category + sub on top, gist under */}
           <div className="flex-1 min-w-0 text-[0.6rem] flex flex-col">
             <div className="flex items-center justify-between gap-2 pr-4">
               <p className="truncate max-w-[50%] text-white">{category}</p>
@@ -90,10 +94,9 @@ export default function DCM({ title, category, sub, gist, icon, definition }) {
               <p className="text-[0.5rem] italic text-brand-grey4">
                 {gist}
               </p>
-            </div>
+            </div>  
           </div>
 
-          {/* RIGHT: arrow button */}
           <button
             type="button"
             onClick={handleToggle}
@@ -102,7 +105,7 @@ export default function DCM({ title, category, sub, gist, icon, definition }) {
             <Play
               className={`
                 w-4 h-4 ml-2 text-brand-grey3 fill-current
-                transform transition-transform duration-700 ease-in-out
+                transform transition-transform duration-1000 ease-in-out
                 ${isOpen ? "-rotate-90" : "rotate-90"}
               `}
             />

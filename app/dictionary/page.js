@@ -1,6 +1,7 @@
 import { Landmark } from "lucide-react";
 import DCM from "../../components/dCM.js";
 import Search from "../../components/search.js";
+import dbConnect from "../../lib/db.js";
 
 export default function Dictionary() {
     return (
@@ -15,7 +16,8 @@ export default function Dictionary() {
                     title = "Aesthetics"
                     category = "Biomechanics & Anatomy"
                     sub = "Neuromuscular & Energy Systems"
-                    gist = "Simple example phrase for testing."
+                    gist = "Simple example phrase for testing. Simple example phrase for testing."
+                    definition = "Simple example phrase for testing. Simple example phrase for testing. Simple example phrase for testing. Simple example phrase for testing. Simple example phrase for testing. Simple example phrase for testing."
                     icon = {<Landmark></Landmark>}
                 />
             </div>
