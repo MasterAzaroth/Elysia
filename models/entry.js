@@ -5,7 +5,9 @@ const EntrySchema = new mongoose.Schema({
   category: { type: String, required: true },
   type: { type: String, required: true },
   gist: { type: String, required: true},
-  iconName: { type: String, default: "Landmark" }, 
+  definition: { type: String, required: true},
+  iconName: { type: String, default: "Landmark" },
+  letter: { type: String, required: true},
 });
 
 export default mongoose.models.Entry || mongoose.model("Entry", EntrySchema);

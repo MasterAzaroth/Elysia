@@ -1,6 +1,6 @@
 // app/api/entries/route.js
-import dbConnect from "../../lib/db.js";
-import Entry from "../../models/entry.js";
+import dbConnect from "../../../lib/db.js";
+import Entry from "../../../models/entry.js";
 
 export async function GET() {
   try {

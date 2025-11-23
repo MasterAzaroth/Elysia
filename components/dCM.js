@@ -63,7 +63,7 @@ export default function DCM({ title, category, sub, gist, icon, definition }) {
               {gist}
             </p>
             {definition && (
-              <p className="text-[0.5rem] text-brand-grey3 text-center">
+              <p className="text-[0.5rem] text-center">
                 {definition}
               </p>
             )}
