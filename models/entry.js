@@ -6,7 +6,7 @@ const EntrySchema = new mongoose.Schema({
   type: { type: String, required: true },
   gist: { type: String, required: true},
   definition: { type: String, required: true},
-  iconName: { type: String, default: "Landmark" },
+  icon: { type: String, default: "Landmark" },
   letter: { type: String, required: true},
 });
 
