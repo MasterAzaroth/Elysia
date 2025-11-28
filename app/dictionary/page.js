@@ -6,6 +6,7 @@ import { Landmark, Zap, Dumbbell, ClipboardList, Cog, Dna } from "lucide-react";
 import DCM from "../../components/dCM.js";
 import Search from "../../components/search.js";
 import Alphabet from "../../components/alphabetSeperator.js";
+import Nav from "../../components/navBar.js";
 
 export default function Dictionary() {
   const [entries, setEntries] = useState([]);
@@ -97,54 +98,57 @@ export default function Dictionary() {
   const totalVisible = Object.values(groupedByLetter).reduce((acc, list) => acc + list.length, 0);
 
   return (
-    <main className="w-full h-full">
-      <div className="flex flex-col mb-6">
-        {/* 3) Pass state and setter to Search component */}
-        <Search 
-          value={searchQuery} 
-          onChange={setSearchQuery} 
-          placeholder="Search dictionary..." 
-        />
-        <div className="w-full h-[1px] bg-brand-grey3" />
-      </div>
-
-      {loading && <p className="text-xs text-brand-grey4">Loading entries…</p>}
-      {!loading && errorMsg && <p className="text-xs text-red-500">Error: {errorMsg}</p>}
-
-      {!loading && !errorMsg && (
-        <div className="flex flex-col gap-6">
-          {Object.entries(groupedByLetter).map(([letter, list]) => (
-            <section key={letter}>
-              <Alphabet letter={letter} />
-              <div className="flex flex-col gap-4 mt-2">
-                {list.map((entry) => (
-                  <DCM
-                    key={entry.id}
-                    title={entry.title}
-                    category={entry.category}
-                    sub={entry.sub}
-                    gist={entry.gist}
-                    definition={entry.definition}
-                    icon={renderIcon(entry.iconName)}
-                  />
-                ))}
-              </div>
-            </section>
-          ))}
-
-          {/* Show this if we loaded data, but the search filtered everything out */}
-          {entries.length > 0 && totalVisible === 0 && (
-            <p className="text-xs text-brand-grey4 text-center">
-              No matches found for "{searchQuery}"
-            </p>
-          )}
-
-          {/* Show this if the database is actually empty */}
-          {entries.length === 0 && (
-            <p className="text-xs text-brand-grey4">No entries found.</p>
-          )}
+    <div>
+      <main className="w-full h-full">
+        <div className="flex flex-col mb-6">
+          {/* 3) Pass state and setter to Search component */}
+          <Search 
+            value={searchQuery} 
+            onChange={setSearchQuery} 
+            placeholder="Search dictionary..." 
+          />
+          <div className="w-full h-[1px] bg-brand-grey3" />
         </div>
-      )}
-    </main>
+
+        {loading && <p className="text-xs text-brand-grey4">Loading entries…</p>}
+        {!loading && errorMsg && <p className="text-xs text-red-500">Error: {errorMsg}</p>}
+
+        {!loading && !errorMsg && (
+          <div className="flex flex-col gap-6">
+            {Object.entries(groupedByLetter).map(([letter, list]) => (
+              <section key={letter}>
+                <Alphabet letter={letter} />
+                <div className="flex flex-col gap-4 mt-2">
+                  {list.map((entry) => (
+                    <DCM
+                      key={entry.id}
+                      title={entry.title}
+                      category={entry.category}
+                      sub={entry.sub}
+                      gist={entry.gist}
+                      definition={entry.definition}
+                      icon={renderIcon(entry.iconName)}
+                    />
+                  ))}
+                </div>
+              </section>
+            ))}
+
+            {/* Show this if we loaded data, but the search filtered everything out */}
+            {entries.length > 0 && totalVisible === 0 && (
+              <p className="text-xs text-brand-grey4 text-center">
+                No matches found for "{searchQuery}"
+              </p>
+            )}
+
+            {/* Show this if the database is actually empty */}
+            {entries.length === 0 && (
+              <p className="text-xs text-brand-grey4">No entries found.</p>
+            )}
+          </div>
+        )}
+      </main>
+      
+    </div>
   );
 }

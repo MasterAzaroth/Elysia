@@ -31,3 +31,21 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #212121;
+  border-right: 1rem solid transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7D5BF8;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3E2A99;
+}
