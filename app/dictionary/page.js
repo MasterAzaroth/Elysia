@@ -3,10 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { Landmark, Zap, Dumbbell, ClipboardList, Cog, Dna } from "lucide-react";
 
-import DCM from "../../components/dCM.js";
-import Search from "../../components/search.js";
-import Alphabet from "../../components/alphabetSeperator.js";
-import Nav from "../../components/navBar.js";
+import DCM from "../../components/dictionary/dCM.js";
+import Search from "../../components/global/search.js";
+import Alphabet from "../../components/dictionary/alphabetSeperator.js";
+import Nav from "../../components/global/navBar.js";
 
 export default function Dictionary() {
   const [entries, setEntries] = useState([]);

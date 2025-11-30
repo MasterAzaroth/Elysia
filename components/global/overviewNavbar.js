@@ -23,7 +23,7 @@ export default function DNav() {
         `}
       >
         <Hamburger />
-        <p className="text-xl ml-2">Hypertrophy</p>
+        <p className="text-xl ml-2">Nutrition</p>
       </button>
 
       <button

@@ -1,4 +1,4 @@
-import DNav from "../../components/dashboardNav.js";
+import DNav from "../../components/dashboardHypertrophy/dashboardNav.js";
 
 export default function Dashboard() {
     return (

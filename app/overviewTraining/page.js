@@ -1,4 +1,4 @@
-import OverviewNavbar from "@/components/overviewNavbar.js";
+import OverviewNavbar from "@/components/global/overviewNavbar.js";
 
 export default function overviewTraining() {
 
